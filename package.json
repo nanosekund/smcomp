@@ -1,0 +1,17 @@
+{
+  "name": "smcomp",
+  "version": "1.3.2",
+  "description": "Simple sourcemod plugin compile module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sourcemod",
+    "sourcepawn",
+    "compile",
+    "compiler"
+  ],
+  "author": "Robin Persson <robin.j.persson@gmail.com>",
+  "license": "MIT"
+}
