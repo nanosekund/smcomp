@@ -12,6 +12,10 @@
     "compile",
     "compiler"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nanosekund/smcomp.git"
+  },
   "author": "Robin Persson <robin.j.persson@gmail.com>",
   "license": "MIT"
 }
