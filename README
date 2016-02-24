@@ -1,6 +1,10 @@
 # smcomp
 
-This module should work on win/linux to, i've only tested it on mac so far though.
+Tested and working on windows,mac and linux and it is working.
+on linux you need the 32-bit libraries.
+
+#### Install 32-bit libraries on ubuntu
+    sudo apt-get install apt-get install libstdc++6:i386
 
 #### Installation
     npm install smcomp --save
@@ -13,10 +17,8 @@ This module should work on win/linux to, i've only tested it on mac so far thoug
         '-E' : null
     };
 
-    //The options parameter is optional.
-    //see the "Options" description in this readme
-    smcomp.compile('inputfile.sp', 'outputfile.smx', options,
-    function(err, stdout){
+    //The options parameter is optional see the "Options" description in this readme
+    smcomp.compile('inputfile.sp', 'outputfile.smx', options, function(err, stdout){
         if(err) { return console.error(stdout); }
         //Success
     });
