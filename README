@@ -7,7 +7,7 @@ This module should work on win/linux to, i've only tested it on mac so far thoug
 
 #### Usage
 
-    var smcomp = require('smcomp);
+    var smcomp = require('smcomp');
     var options = {
         '-v' : 2,
         '-E' : null
