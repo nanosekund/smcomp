@@ -1,32 +1,28 @@
 var exec = require('child_process').exec;
 var os = require('os').platform();
 var events = require('events');
-var platform = {
-  'darwin' : 'mac',
-  'win32' : 'win',
-  'linux' : 'linux',
-  'sunos' : 'linux',
-  'freebsd' : 'linux'
-};
 
 var comp = {
-  mac : '/comp/mac/spcomp',
-  win : '/comp/win/spcomp.exe',
-  linux : '/comp/linux/spcomp'
+  darwin : '/comp/' + os + '/spcomp',
+  win32 : '/comp/' + os + '/spcomp.exe',
+  linux : '/comp/' + os + '/spcomp'
 };
 
 var defOptions = {
-  '-i' : __dirname + '/comp/include'
+  '-i' : __dirname + '/comp/include',
+  '-v' : '2'
 };
 
-exports.compile = function (sourceFile, compiledFile, options,cb){
+exports.compile = function (sourceFile, compiledFile, options,cb) {
 
   if(typeof cb === 'undefined') {
     cb = options;
     options = defOptions;
   }
 
-  var command = __dirname + comp[platform[os]] + ' '
+  var command = __dirname
+    + comp[os]
+    + ' '
     + sourceFile
     + ' -o' + compiledFile;
 
@@ -47,13 +43,11 @@ exports.compile = function (sourceFile, compiledFile, options,cb){
   }
 
   exec(command, function (err, stdout, stderr) {
-    if(err)
-    {
-      cb(true, stdout);
+    if(err) {
+      cb(true, err);
     }
-    else
-    {
-        cb(null, stdout);
+    else {
+      cb(null, stdout);
     }
   });
 };
